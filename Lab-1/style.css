@@ -1,0 +1,154 @@
+:root {
+    --month: "Styczeń";
+    --monday: "PN";
+    --tuesday: "WT";
+    --wednesday: "ŚR";
+    --thursday: "CZ";
+    --friday: "PT";
+    --saturday: "SB";
+    --sunday: "ND";
+    font-size: 4vh;
+}
+
+html,
+body {
+    margin: 0;
+    background: linear-gradient(90deg, #051622 0%, #1c6090 50%, #051622 100%);
+}
+
+.wrapper {
+    padding: 3vh;
+}
+
+.container {
+    background-color: #316486;
+    border: 1vh solid #02090e;
+    border-radius: 4vh;
+    counter-reset: dayCounter;
+    font-family: fantasy;
+    overflow: hidden;
+    box-shadow: 0 0 2vh #263946, 0 0 1vh #2183c8;
+    text-shadow: 0.3vh 0.3vh #ffffff;
+    padding: 2vh;
+}
+
+.container > * {
+    background-color: #4f90bb;
+    border-radius: 2vh;
+    transition: 0.4s;
+}
+
+.container > .emptyStart,
+.container > .emptyEnd {
+    background-color: #316486;
+}
+
+.container > .countDay:hover {
+    background-color: #85a2b6;
+}
+
+.container > .countDay::after {
+    counter-increment: dayCounter;
+    content: counter(dayCounter);
+    padding: 2vh;
+}
+
+.container > .title {
+    cursor: pointer;
+}
+
+.container > .title::before {
+    content: var(--month);
+    font-size: 2rem;
+}
+
+.container > .dayName:nth-child(2)::before {
+    content: var(--monday);
+}
+
+.container > .dayName:nth-child(3)::before {
+    content: var(--tuesday);
+}
+
+.container > .dayName:nth-child(4)::before {
+    content: var(--wednesday);
+}
+
+.container > .dayName:nth-child(5)::before {
+    content: var(--thursday);
+}
+
+.container > .dayName:nth-child(6)::before {
+    content: var(--friday);
+}
+
+.container > .dayName:nth-child(7)::before {
+    content: var(--saturday);
+}
+
+.container > .dayName:nth-child(8)::before {
+    content: var(--sunday);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2vh;
+    text-align: center;
+}
+
+.container > .title {
+    grid-column: 1 / 8;
+}
+
+.container > .emptyStart {
+    grid-column: 1 / 7;
+}
+
+.container > .emptyEnd {
+    display: none;
+}
+
+.flat {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.flat > .title,
+.flat > .countDay::before {
+    padding: 2vh;
+}
+
+.flat > .countDay::before {
+    white-space: pre;
+}
+
+.flat > .countDay:nth-child(7n - 4)::before {
+    content: var(--monday) "\A";
+}
+
+.flat > .countDay:nth-child(7n - 3)::before {
+    content: var(--tuesday) "\A";
+}
+.flat > .countDay:nth-child(7n - 2)::before {
+    content: var(--wednesday) "\A";
+}
+.flat > .countDay:nth-child(7n - 1)::before {
+    content: var(--thursday) "\A";
+}
+.flat > .countDay:nth-child(7n)::before {
+    content: var(--friday) "\A";
+}
+.flat > .countDay:nth-child(7n + 1)::before {
+    content: var(--saturday) "\A";
+}
+.flat > .countDay:nth-child(7n + 2)::before {
+    content: var(--sunday) "\A";
+}
+
+.flat > .emptyStart,
+.flat > .dayName {
+    display: none;
+}
