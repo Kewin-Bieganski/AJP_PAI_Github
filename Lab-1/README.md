@@ -10,4 +10,4 @@
 Należy kliknąć obszar nazwy miesiąca, w tym przypadku _Styczeń_, by zmienić format wyświetlania kalendarza z GRID layout na FLEX layout.
 
 ## Wnioski:
-Przeniesienie odpowiedzialności wyświetlania tekstu strony z HTML do CSS to dość ciekawe wyzwanie, jednak wykonywalne. Dość estetyczny ~~(w mojej opinii)~~ wygląd kalendarza został uzyskany za pomocą zastosowania cieni i gradientu. Przy tworzeniu kalendarza zwracano uwagę na jego dostosowanie się do różnych wielkości wyświetlaczy, by jego zawartość nie ulegała zniekształceniu.
+Przeniesienie odpowiedzialności wyświetlania tekstu strony z HTML do CSS to dość ciekawe wyzwanie, jednak wykonywalne. Dość estetyczny ~~(w mojej opinii)~~ wygląd kalendarza został uzyskany za pomocą zastosowania cieni i gradientu.
