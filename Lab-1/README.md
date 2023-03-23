@@ -5,6 +5,7 @@
 | **Przedmiot** | Projektowanie aplikacji internetowych | inż. Grzegorz Petri |
 | **Autor** | Kewin Biegański | ST |
 <br>
+
 ## Instrukcja obsługi:
 Należy kliknąć obszar nazwy miesiąca, w tym przypadku _Styczeń_, by zmienić format wyświetlania kalendarza z GRID layout na FLEX layout.
 
