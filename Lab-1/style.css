@@ -10,9 +10,11 @@
     font-size: 4vh;
 }
 
-html,
-body {
+html, body{
     margin: 0;
+}
+
+body {
     background: linear-gradient(90deg, #051622 0%, #1c6090 50%, #051622 100%);
 }
 
