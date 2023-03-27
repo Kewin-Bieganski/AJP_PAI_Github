@@ -5,21 +5,18 @@
     --wednesday: "ŚR";
     --thursday: "CZ";
     --friday: "PT";
-    --saturday: "SB";
+    --saturday: "SO";
     --sunday: "ND";
-    font-size: 4vh;
+    font-size: 3.9vh;
 }
 
-html, body{
+html,
+body {
     margin: 0;
 }
 
 body {
     background: linear-gradient(90deg, #051622 0%, #1c6090 50%, #051622 100%);
-}
-
-.wrapper {
-    padding: 3vh;
 }
 
 .container {
@@ -31,13 +28,15 @@ body {
     overflow: hidden;
     box-shadow: 0 0 2vh #263946, 0 0 1vh #2183c8;
     text-shadow: 0.3vh 0.3vh #ffffff;
-    padding: 2vh;
+    padding: 1vh;
+    margin: 8vh 4vh;
 }
 
 .container > * {
     background-color: #4f90bb;
     border-radius: 2vh;
     transition: 0.4s;
+    overflow: inherit;
 }
 
 .container > .emptyStart,
@@ -52,7 +51,6 @@ body {
 .container > .countDay::after {
     counter-increment: dayCounter;
     content: counter(dayCounter);
-    padding: 2vh;
 }
 
 .container > .title {
@@ -61,7 +59,8 @@ body {
 
 .container > .title::before {
     content: var(--month);
-    font-size: 2rem;
+    font-size: 1.7rem;
+    transition: inherit;
 }
 
 .container > .dayName:nth-child(2)::before {
@@ -95,13 +94,13 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
     gap: 2vh;
     text-align: center;
 }
 
 .container > .title {
-    grid-column: 1 / 8;
+    grid-column: 1 / -1;
 }
 
 .container > .emptyStart {
@@ -109,7 +108,7 @@ body {
 }
 
 .container > .emptyEnd {
-    display: none;
+    grid-column: 3 / -1;
 }
 
 .flat {
@@ -119,6 +118,7 @@ body {
 }
 
 .flat > .title,
+.flat > .countDay::after,
 .flat > .countDay::before {
     padding: 2vh;
 }
@@ -127,30 +127,37 @@ body {
     white-space: pre;
 }
 
-.flat > .countDay:nth-child(7n - 4)::before {
+.flat > .countDay:nth-child(7n - 3)::before {
     content: var(--monday) "\A";
 }
 
-.flat > .countDay:nth-child(7n - 3)::before {
+.flat > .countDay:nth-child(7n - 2)::before {
     content: var(--tuesday) "\A";
 }
-.flat > .countDay:nth-child(7n - 2)::before {
+.flat > .countDay:nth-child(7n - 1)::before {
     content: var(--wednesday) "\A";
 }
-.flat > .countDay:nth-child(7n - 1)::before {
+.flat > .countDay:nth-child(7n)::before {
     content: var(--thursday) "\A";
 }
-.flat > .countDay:nth-child(7n)::before {
+.flat > .countDay:nth-child(7n + 1)::before {
     content: var(--friday) "\A";
 }
-.flat > .countDay:nth-child(7n + 1)::before {
+.flat > .countDay:nth-child(7n + 2)::before {
     content: var(--saturday) "\A";
 }
-.flat > .countDay:nth-child(7n + 2)::before {
+.flat > .countDay:nth-child(7n + 3)::before {
     content: var(--sunday) "\A";
 }
 
 .flat > .emptyStart,
+.flat > .emptyEnd,
 .flat > .dayName {
     display: none;
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        font-size: 5vw;
+    }
 }
